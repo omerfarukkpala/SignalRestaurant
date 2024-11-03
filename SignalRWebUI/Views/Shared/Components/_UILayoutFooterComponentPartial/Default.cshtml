@@ -1,0 +1,68 @@
+﻿@model List<ResultContactDto>
+@foreach (var item in Model)
+{
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <div class="footer_contact">
+                        <h4>
+                            Bize Ulaşın
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="@item.Location" target="_blank">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    Google Maps
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    @item.Phone
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    @item.Mail
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <div class="footer_detail">
+                        <a href="/Default/Index/" class="footer-logo">
+                            @item.FooterTitle
+                        </a>
+                        <p>
+                            @item.FooterDescription
+                        </p>
+                        <vc:_ui-layout-social-media-component-partial />
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h4>
+                        @item.OpenDays
+                    </h4>
+                    <p>
+                        @item.OpenDaysDescription
+                    </p>
+                    <p>
+                        @item.OpenHours
+                    </p>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>
+                    &copy; <span id="displayYear"></span> Tüm Hakları Saklıdır | @DateTime.Today.ToShortDateString()
+                    <a href="https://github.com/omerfarukkpala">PALA Restaurant</a><br><br>
+                    &copy; <span id="displayYear"></span> Geliştiren
+                    <a href="https://github.com/omerfarukkpala" target="_blank">Ömer Faruk Pala </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+}
+

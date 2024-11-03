@@ -1,0 +1,53 @@
+﻿@model UpdateMessageDto
+@{
+    ViewData["Title"] = "UpdateMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Mesaj İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-controller="About" asp-action="UpdateAbout">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Mesaj Okuma Sayfası </div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" asp-for="MessageID" />
+                            <div class="form-group">
+                                <label>Ad Soyad</label>
+                                <input type="text" class="form-control" asp-for="NameSurname" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Mail</label>
+                                <input type="email" class="form-control" asp-for="Mail" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="text" class="form-control" asp-for="Phone" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Gönderim Tarihi</label>
+                                <input type="datetime-local" class="form-control" asp-for="MessageSendDate" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Konu</label>
+                                <input type="email" class="form-control" asp-for="Subject" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Mesaj İçeriği</label>
+                                <textarea class="form-control" asp-for="MessageContent" rows="4" readonly></textarea>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="/AdminMessage/Index/" class="btn btn-danger">Mesaj Listesine Dön</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

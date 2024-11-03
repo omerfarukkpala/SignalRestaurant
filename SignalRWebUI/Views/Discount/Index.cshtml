@@ -1,0 +1,68 @@
+﻿@model List<ResultDiscountDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+@* <img src="~/feane-1.0.0/images/hot-1.png" />
+ *@<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Günün İndirimleri İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Günün İndirim Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            İndirim alanıyla ilgili işlemleri buradan yapabilirsiniz. Tema bütünlüğü için sadece <strong>2 tane aktif indirim </strong> oluşturunuz.
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ürün</th>
+                                    <th scope="col">İndirim Oranı</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                    <th scope="col">Aktif Yap</th>
+                                    <th scope="col">Pasif Yap</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Amount</td>
+                                        <td>
+                                            @if (item.Status == true)
+                                            {
+                                                <span class="badge badge-success">Aktif</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger">Pasif</span>
+                                            }
+                                        </td>
+                                        <td><a href="/Discount/DeleteDiscount/@item.DiscountID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Discount/UpdateDiscount/@item.DiscountID" class="btn btn-primary">Güncelle</a></td>
+                                        <td><a href="/Discount/DiscountStatusChangeTrue/@item.DiscountID" class="btn btn-success">Aktif</a></td>
+                                        <td><a href="/Discount/DiscountStatusChangeFalse/@item.DiscountID" class="btn btn-dark">Pasif</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/Discount/CreateDiscount/" class="btn btn-default">Yeni İndirim Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

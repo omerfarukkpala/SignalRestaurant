@@ -1,0 +1,69 @@
+﻿@model List<ResultMessageDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Mesaj İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Mesaj Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ad Soyad</th>
+                                    <th scope="col">Mail</th>
+                                    <th scope="col">Telefon</th>
+                                    <th scope="col">Konu</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                    <th scope="col">Okundu Yap</th>
+                                    <th scope="col">Okunmadı Yap</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.MessageID</td>
+                                        <td>@item.NameSurname</td>
+                                        <td>@item.Mail</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.Subject</td>
+                                        <td>@(((DateTime)item.MessageSendDate).ToString("dd-MM-yyyy HH:mm"))</td>
+                                        <td>
+                                            @if (item.Status == true)
+                                            {
+                                                <span class="badge badge-success">Okundu</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger">Okunmadı</span>
+                                            }
+                                        </td>
+                                        <td><a href="/AdminMessage/DeleteMessage/@item.MessageID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/AdminMessage/UpdateMessage/@item.MessageID" class="btn btn-primary">Mesajı Gör</a></td>
+                                        <td><a href="/AdminMessage/ChangeMessageStatusTrue/@item.MessageID" class="btn btn-success">Okundu</a></td>
+                                        <td><a href="/AdminMessage/ChangeMessageStatusFalse/@item.MessageID" class="btn btn-dark">Okunmadı</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

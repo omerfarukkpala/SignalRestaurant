@@ -1,0 +1,62 @@
+﻿@model UpdateContactDto
+@{
+    ViewData["Title"] = "UpdateContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Ana Sayfa İletişim Bilgi İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" asp-controller="Contact" asp-action="UpdateContact">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">İletişim Bilgisi Güncelle </div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" asp-for="ContactID" />
+                            <div class="form-group">
+                                <label>Konum</label>
+                                <input type="text" class="form-control" asp-for="Location">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="text" class="form-control" asp-for="Phone">
+                            </div>
+                            <div class="form-group">
+                                <label>Mail</label>
+                                <input type="email" class="form-control" asp-for="Mail">
+                            </div>
+                            <div class="form-group">
+                                <label>Açıklama</label>
+                                <textarea class="form-control" asp-for="FooterDescription" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Başlık</label>
+                                <input type="text" class="form-control" asp-for="FooterTitle">
+                            </div>
+                            <div class="form-group">
+                                <label>Açık Günler</label>
+                                <input type="text" class="form-control" asp-for="OpenDays">
+                            </div>
+                            <div class="form-group">
+                                <label>Açık Günler Açıklama</label>
+                                <input type="text" class="form-control" asp-for="OpenDaysDescription">
+                            </div>
+                            <div class="form-group">
+                                <label>Çalışma Saatleri</label>
+                                <input type="text" class="form-control" asp-for="OpenHours">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Güncelle</button>
+                            <a href="/Contact/Index/" class="btn btn-danger">İptal</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,64 @@
+﻿@model LoginDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pala Restoran Giriş</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="~/colorlib-regform-32/css/nunito-font.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="~/colorlib-regform-32/css/style.css" />
+</head>
+<body class="form-v6">
+
+    <div class="page-content">
+        <div class="form-v6-content">
+           @*  <div class="form-left">
+                <img src="~/colorlib-regform-32/images/Sauce1.jpg" alt="form" style="width:484px; height:584px">
+            </div> *@
+            <form class="form-detail" method="post">
+                <h2>Giriş Formu</h2>
+                <div class="form-row">
+                    <input type="text" asp-for="Username" class="input-text" placeholder="Kullanıcı Adınız" required>
+                </div>
+                <div class="form-row">
+                    <input type="password" asp-for="Password" class="input-text" placeholder="Şifreniz" required>
+                </div>
+
+                <div class="text-center">
+                    <span class="text-danger" asp-validation-summary="ModelOnly"></span>
+                </div>
+
+            @*     <button class="btn btn-dark">Giriş Yap</button>
+
+                <div class="text-center p-t-80">
+                    <span class="txt1">
+                        Henüz hesabınız yok mu?
+                    </span>
+                    <a class="txt2" href="/Register/Index/" style="font-weight: bold; color: #007bff; text-decoration: underline;">Kayıt Ol</a>
+                </div> *@
+                <div class="d-flex justify-content-center align-items-center p-t-80">
+                    <button class="btn btn-dark me-3" style="width: 120px; font-size: 18px;">Giriş Yap</button>
+                    <br /> <br />
+                    <span class="txt1" style="font-size: 18px; color: #000000;">Henüz hesabınız yok mu?</span>
+                    <a class="txt2 ms-2" href="/Register/Index/" style="font-weight: bold; color: #007bff; text-decoration: underline; font-size: 18px;">Kayıt Ol</a>
+                </div>
+
+
+
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

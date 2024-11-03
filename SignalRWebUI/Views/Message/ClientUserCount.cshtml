@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "ClientUserCount";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+@* CLİENT INDEX *@
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="sub_page">
+    <div class="hero_area">
+        <div class="bg-box">
+            <img src="~/feane-1.0.0/images/heroo-.jpg" alt="">  
+        </div>
+        <vc:_default-navbar-component-partial />
+    </div>
+
+    <section class="book_section layout_padding">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="btn btn-primary btn-round">Anlık Client Sayısı: <strong id="clientcountvalue"></strong></h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="btn btn-success btn-round">Bağlantının Durumu: <strong id="connstatus"></strong></div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(() => {
+        var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:5002/SignalRHub").build();
+        $("#connstatus").text(connection.state);
+
+        connection.start().then(() => {
+            $("#connstatus").text(connection.state);
+        }).catch((err) => { console.log(err) });
+
+        connection.on("ReceiveClientCount", (clientCount) => {
+            $("#clientcountvalue").text(clientCount);
+        });
+
+    });
+
+</script>
+
+
+
+
+
+

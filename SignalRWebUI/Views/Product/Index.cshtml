@@ -1,0 +1,60 @@
+﻿@model List<ResultProductDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Ürün İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Ürün Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ürün Adı</th>
+                                    <th scope="col">Fiyat</th>
+                                    <th scope="col">Kategori</th>
+                                    <th scope="col">Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ProductID</td>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.Price ₺</td>
+                                        <td>@item.CategoryName</td>
+                                        <td>
+                                            @if (item.ProductStatus == true)
+                                            {
+                                                <span class="badge badge-success">Aktif</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger">Pasif</span>
+                                            }
+                                        </td>
+                                        <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Product/UpdateProduct/@item.ProductID" class="btn btn-primary">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/Product/CreateProduct/" class="btn btn-default">Yeni Ürün Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

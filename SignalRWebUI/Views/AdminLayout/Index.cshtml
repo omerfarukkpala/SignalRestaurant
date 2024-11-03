@@ -1,0 +1,19 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<vc:_layout-header-component-partial />
+<body>
+    <div class="wrapper">
+        <vc:_layout-navbar-component-partial />
+        <vc:_layout-sidebar-component-partial />
+        <div class="main-panel">
+            @RenderBody()
+            @* <vc:_layout-footer-component-partial /> *@
+        </div>
+    </div>
+
+    <vc:_layout-script-component-partial />
+</body>
+</html>

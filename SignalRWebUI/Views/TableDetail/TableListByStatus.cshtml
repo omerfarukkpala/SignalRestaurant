@@ -1,0 +1,77 @@
+﻿@model List<ResultTableDetailDto>
+@{
+    ViewData["Title"] = "TableListByStatus";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="content">
+    <div class="container-fluid">
+
+        <script type="text/javascript">
+
+            $(document).ready(() => {
+                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:5002/SignalRHub").build();
+                $("#connstatus").text(connection.state);
+
+                connection.start().then(() => {
+                    $("#connstatus").text(connection.state);
+                    setInterval(() => {
+                        connection.invoke("GetTableDetailStatus");
+                    }, 1000);
+                }).catch((err) => { console.log(err) });
+
+                connection.on("ReceiveTableDetailStatus", (value) => {
+                    let color = "";
+                    let status = "";
+                    $("#tabledetaillist").empty();
+                    value.forEach((item) => {
+                        if (item.status == false) {
+                            color = "card card-stats card-danger";
+                            status = "Masa Boş";
+                        } else {
+                            color = "card card-stats card-success";
+                            status = "Masa Dolu";
+                        }
+                        $("#tabledetaillist").append(`<div class="col-md-3">
+                                                                    <div class="${color}">
+                                                                        <div class="card-body ">
+                                                                            <div class="row">
+                                                                                <div class="col-5">
+                                                                                    <div class="icon-big text-center">
+                                                                                        <i class="la la-table"></i>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-7 d-flex align-items-center">
+                                                                                    <div class="numbers">
+                                                                                        <p class="card-category">${item.name}</p>
+                                                                                        <h4 class="card-title">${status}</h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>`);
+                    });
+                });
+
+            });
+
+        </script>
+
+        <div class="row">
+            <div class="col-md-9">
+                <h4 class="page-title">Anlık Masa Durumları Sayfası</h4>
+            </div>
+            <div class="col-md-3 text-right">
+                <div class="btn btn-success btn-round">Bağlantının Durumu: <strong id="connstatus"></strong></div>
+            </div>
+        </div>
+        <div class="row" id="tabledetaillist">
+        </div>
+    </div>
+</div>

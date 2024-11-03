@@ -1,0 +1,76 @@
+﻿@model List<ResultNotificationDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Bildirim İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Bildirim Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Açıklama</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                    <th scope="col">Okundu İşaretle</th>
+                                    <th scope="col">Okunmadı İşaretle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.NotificationID</td>
+                                        <td>@item.Description</td>
+                                        @* <td>@(((DateTime)item.Date).ToString("dd-MM-yyy HH:mm"))</td> *@
+                                        <td>
+                                            @if (item.Date != null)
+                                            {
+                                                @(((DateTime)item.Date).ToString("dd-MM-yyyy HH:mm"))
+                                            }
+                                        </td>
+                                        @if (item.Status == true)
+                                        {
+                                            <td>
+                                                <span class="badge badge-success">Okundu</span>
+                                            </td>
+
+                                        }
+                                        @if (item.Status == false)
+                                        {
+                                            <td>
+                                                <span class="badge badge-danger">Okunmadı</span>
+                                            </td>
+
+                                        }
+
+                                        <td><a href="/Notification/DeleteNotification/@item.NotificationID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Notification/UpdateNotification/@item.NotificationID" class="btn btn-primary">Güncelle</a></td>
+                                        <td><a href="/Notification/UpdateNotificationStatusTrue/@item.NotificationID" class="btn btn-warning">Okundu</a></td>
+                                        <td><a href="/Notification/UpdateNotificationStatusFalse/@item.NotificationID" class="btn btn-secondary">Okunmadı</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/Notification/CreateNotification/" class="btn btn-default">Yeni Bildirim Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,52 @@
+﻿@model CreateMessageDto
+<section class="book_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                Bize Ulaşın
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form_container">
+                    <form method="post" asp-controller="Default" asp-action="SendMessage">
+                        <div>
+                            <input type="text" class="form-control" placeholder="Ad Soyad" asp-for="NameSurname"/>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Telefon Numaranız" asp-for="Phone" />
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Mail Adresiniz" asp-for="Mail" />
+                        </div>
+                        <div>
+                            <select class="form-control nice-select wide" asp-for="Subject">
+                                <option value="" disabled selected>
+                                    Konu Seçiniz
+                                </option>
+                                <option value="Teşekkür">Teşekkür</option>
+                                <option value="Öneri">Öneri</option>
+                                <option value="Şikayet">Şikayet</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea class="form-control" placeholder="Buraya mesajınızı yazabilirsiniz"  rows="4" asp-for="MessageContent"></textarea>
+                        </div>
+                        <div class="btn_box">
+                            <button>
+                                Mesajı Gönder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="map_container ">
+@*                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195113.5123616082!2d28.929887483011576!3d40.172376269582365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3c330cd4513b%3A0x67ea9d59607ca3a!2sOsmangazi%CC%87%2FBursa!5e0!3m2!1str!2str!4v1730291983377!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ *@                    <iframe src="@ViewBag.location" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

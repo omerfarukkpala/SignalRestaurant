@@ -1,0 +1,152 @@
+﻿@model ResultUserDto
+<div class="sidebar">
+    <div class="scrollbar-inner sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="~/Ready-Bootstrap-Dashboard-master/assets/img/admin.jpg">
+            </div>
+            <div class="info">
+                <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                    <span>
+                        @Model.Name @Model.Surname
+                        <span class="user-level">Admin</span>
+                        <span class="caret"></span>
+                    </span>
+                </a>
+                <div class="clearfix"></div>
+                <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                    <ul class="nav">
+                        <li>
+                            <a href="/Default/Index/">
+                                <span class="link-collapse">Siteye Git</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Menu/Index/">
+                                <span class="link-collapse">Menüyü Gör</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Setting/Index/">
+                                <span class="link-collapse">Ayarlar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="la la-bar-chart"></i>
+                    <p>Ek İşlemler</p>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/QRCode/Index">QR Code İşemleri</a>
+                    <a class="dropdown-item" href="/Mail/Index">Mail İşlemleri</a>
+                    <a class="dropdown-item" href="/Message/Index">Mesaj Sayfası</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="/ProgressBars/Index/">
+                    <i class="la la-desktop"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Statistic/Index">
+                    <i class="la la-bar-chart"></i>
+                    <p>İstatistikler</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/TableDetail/TableListByStatus/">
+                    <i class="la la-wrench"></i>
+                    <p>Masa Durumları</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Menu/Index/">
+                    <i class="la la-book"></i>
+                    <p>Menüyü Gör</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Category/Index/">
+                    <i class="la la-bookmark"></i>
+                    <p>Kategoriler</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Product/Index/">
+                    <i class="la la-cubes"></i>
+                    <p>Ürünler</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Booking/Index/">
+                    <i class="la la-calendar"></i>
+                    <p>Rezervasyonlar</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Notification/Index/">
+                    <i class="la la-wrench"></i>
+                    <p>Bildirimler Sayfası</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/TableDetail/Index/">
+                    <i class="la la-wrench"></i>
+                    <p>Masalar</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/FoodRapidApi/Index/">
+                    <i class="la la-file-text"></i>
+                    <p>Lezzetli Tarifler</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Message/Index/">
+                    <i class="la la-weixin"></i>
+                    <p>Mesajlar</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Discount/Index/">
+                    <i class="la la-bolt"></i>
+                    <p>İndirimler</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Contact/Index/">
+                    <i class="la la-phone-square"></i>
+                    <p>İletişim</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Feature/Index/">
+                    <i class="la la-heart"></i>
+                    <p>Öne Çıkanlar</p>
+                </a>
+            </li>
+
+@* 			<img src="~/feane-1.0.0/images/client1.jpg" />
+ *@
+
+            <li class="nav-item">
+                <a href="/Testimonial/Index/">
+                    <i class="la la-users"></i>
+                    <p>Referanslar</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/SocialMedia/Index/">
+                    <i class="la la-instagram"></i>
+                    <p>Sosyal Medya</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

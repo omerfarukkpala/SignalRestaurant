@@ -1,0 +1,53 @@
+﻿@model List<ResultTableDetailDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Masa İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Masa Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Masalarla ilgili işlemleri buradan yapabilirsiniz.
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Masa İsmi</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.TableDetailID</th>
+                                        <td>@item.Name</td>
+                                        <td><a href="/TableDetail/DeleteTableDetail/@item.TableDetailID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/TableDetail/UpdateTableDetail/@item.TableDetailID" class="btn btn-primary">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/TableDetail/CreateTableDetail/" class="btn btn-default">Yeni Masa Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

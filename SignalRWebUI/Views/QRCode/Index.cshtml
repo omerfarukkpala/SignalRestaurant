@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">QR Kod Oluşturma Sayfası</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"></div>
+                    </div>
+                    <div class="card-body">
+                         
+                        <form method="post">
+                            <input type="text" name="value" class="form-control"/>
+                            <br />
+                            <input type="submit" value="QR Kod Oluştur" class="btn btn-warning" />
+
+
+                        </form>
+
+                        @if (ViewBag.QRCodeImage != null)
+                        {
+                            <img src="@ViewBag.QRCodeImage" alt="" style="width:400px; height: 400px;" />
+                        }
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

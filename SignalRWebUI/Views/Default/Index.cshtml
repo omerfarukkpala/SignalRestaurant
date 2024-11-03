@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+@* DEFAULT Index *@
+<div class="hero_area">
+    <div class="bg-box">
+        <img src="~/feane-1.0.0/images/herok.jpg" alt="">
+    </div>
+    <vc:_default-navbar-component-partial />
+    <vc:_default-slider-component-partial />
+</div>
+
+<vc:_default-offer-component-partial />
+
+<vc:_default-our-menu-component-partial />
+
+<vc:_default-about-component-partial />
+
+<partial name="/Views/Default/SendMessage.cshtml" />
+
+<vc:_default-testimonial-component-partial />
+

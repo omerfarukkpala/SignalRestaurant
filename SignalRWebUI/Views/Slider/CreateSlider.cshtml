@@ -1,0 +1,53 @@
+﻿@model CreateSliderDto
+@{
+    ViewData["Title"] = "CreateSlider";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Öne Çıkan İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" asp-controller="Slider" asp-action="CreateSlider">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Öne Çıkan Girişi </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>1. Başlığı Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Title1">
+                            </div>
+                            <div class="form-group">
+                                <label>2. Başlığı Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Title2">
+                            </div>
+                            <div class="form-group">
+                                <label>3. Başlığı Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Title3">
+                            </div>
+                            <div class="form-group">
+                                <label>1. Açıklamayı Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Description1">
+                            </div>
+                            <div class="form-group">
+                                <label>2. Açıklamayı Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Description2">
+                            </div>
+                            <div class="form-group">
+                                <label>3. Açıklamayı Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Description3">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Ekle</button>
+                            <a href="/Slider/Index/" class="btn btn-danger">İptal</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
