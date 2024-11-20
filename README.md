@@ -3,7 +3,7 @@
   
 🧩Bu projede, admin ve vitrin panellerini barındıran, SOLID prensiplerine sadık kalarak Clean Code prensiplerinde kodladığımız kapsamlı bir Restoran yönetim sistemi geliştirildi. 💻
  
-   
+    
 https://github.com/user-attachments/assets/62fde126-543c-46b1-8d70-218fb273539f
  
 
