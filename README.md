@@ -6,7 +6,7 @@
       
 https://github.com/user-attachments/assets/62fde126-543c-46b1-8d70-218fb273539f
     
-  
+   
 - 🟢 Projenin Temel Amacı: Restoran rezervasyonları ve online sipariş işlemlerini kapsamlı bir şekilde yönetir. Kullanıcılar, restorana online sipariş verebilir veya rezervasyon oluşturabilirler. Siparişler ve rezervasyonlar admin panelinde SignalR teknolojisi kullanılarak anlık olarak takip edilebilir. Bu sayede admin, siparişleri veya rezervasyonları onaylayabilir, iptal edebilir ve kullanıcılar anlık bildirim alır. Ayrıca, tüm bildirimler ve sipariş durumu değişiklikleri, kullanıcılara e-posta yoluyla iletilir.
 
 - 🌟 Teknik Detaylar ve Özellikler: Bu projede ASP.NET Core  ve SignalR teknolojilerinin yanı sıra, çeşitli kütüphaneler ve mimari desen kullanarak sistemi geliştirdim. Projeyi daha modüler ve sürdürülebilir bir hale getirmek için N Katmanlı Mimari yapısına yer verdim.
