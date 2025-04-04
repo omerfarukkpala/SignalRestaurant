@@ -3,8 +3,8 @@
    
 🧩Bu projede, admin ve vitrin panellerini barındıran, SOLID prensiplerine sadık kalarak Clean Code prensiplerinde kodladığımız kapsamlı bir Restoran yönetim sistemi geliştirildi. 💻
     
-         
-https://github.com/user-attachments/assets/62fde126-543c-46b1-8d70-218fb273539f
+          
+https://github.com/user-attachments/assets/62fde126-543c-46b1-8d70-218fb273539f 
       
         
 - 🟢 Projenin Temel Amacı: Restoran rezervasyonları ve online sipariş işlemlerini kapsamlı bir şekilde yönetir. Kullanıcılar, restorana online sipariş verebilir veya rezervasyon oluşturabilirler. Siparişler ve rezervasyonlar admin panelinde SignalR teknolojisi kullanılarak anlık olarak takip edilebilir. Bu sayede admin, siparişleri veya rezervasyonları onaylayabilir, iptal edebilir ve kullanıcılar anlık bildirim alır. Ayrıca, tüm bildirimler ve sipariş durumu değişiklikleri, kullanıcılara e-posta yoluyla iletilir.
