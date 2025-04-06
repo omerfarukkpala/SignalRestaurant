@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/62fde126-543c-46b1-8d70-218fb273539f
 - 📲 Kullanıcı Etkileşimi ve Anlık Bildirimler: Kullanıcılar, admin paneline öneri, talep, ve şikayet gibi konularda mesaj gönderebilir. Bu mesajlar, SignalR teknolojisi sayesinde anlık olarak admin dashboard'unda görüntülenir ve admin kullanıcı, mesajları hızlıca yanıtlayabilir. Böylece kullanıcılar ve restoran yönetimi arasında güçlü bir anlık iletişim sağlanır.
 
 - 🪑 Masa Durumları ve Verimli Yönetim: Restoran içerisindeki masaların dolu veya boş olduğu durumlar sistem üzerinden gerçek zamanlı olarak takip edilebilir. Bu sayede, masaların doluluk durumuna göre hızlı ve verimli bir masa yönetimi sağlanır. Admin panelindeki dashboard, masaların durumunu anlık olarak güncelleyerek yönetimin işini kolaylaştırır.
-
+ 
 
 
  
