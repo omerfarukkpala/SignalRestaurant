@@ -1,5 +1,5 @@
 # Pala Restoran             
-### 🚀 Asp.Net Core ile Çok Katmanlı, Real-Time Restoran Yönetim Sistemi Projesi! 🚀                                     
+### 🚀 Asp.Net Core ile Çok Katmanlı, Real-Time Restoran Yönetim Sistemi Projesi! 🚀                                      
        
 🧩Bu projede, admin ve vitrin panellerini barındıran, SOLID prensiplerine sadık kalarak Clean Code prensiplerinde kodladığımız kapsamlı bir Restoran yönetim sistemi geliştirildi. 💻 
      
